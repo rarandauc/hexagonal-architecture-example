@@ -13,7 +13,7 @@ public class Product {
     private Long id;
     private String productName;
     private int supplierID;
-    private int categoryID;
+    private Category categoryID;
     private String quantityPerUnit;
     private float unitPrice;
     private int unitsInStock;

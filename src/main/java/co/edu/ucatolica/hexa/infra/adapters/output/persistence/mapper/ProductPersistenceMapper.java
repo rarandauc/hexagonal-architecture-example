@@ -2,12 +2,15 @@ package co.edu.ucatolica.hexa.infra.adapters.output.persistence.mapper;
 
 import co.edu.ucatolica.hexa.domain.model.Product;
 import co.edu.ucatolica.hexa.infra.adapters.output.persistence.entity.ProductEntity;
+import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
+import java.util.Optional;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = CategoryPersistenceMapper.class)
 public interface ProductPersistenceMapper
 {
     ProductPersistenceMapper INSTANCE = Mappers.getMapper(ProductPersistenceMapper.class);
@@ -20,4 +23,6 @@ public interface ProductPersistenceMapper
     Product toProduct(ProductEntity productEntity);
 
     List<Product> EntitiesToProducts(List<ProductEntity> productEntities);
+
+
 }
